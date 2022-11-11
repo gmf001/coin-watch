@@ -23,7 +23,7 @@ export function Sparkline({
 	const borderColor = percentChange < 0 ? '#fca5a5' : '#86efac';
 
 	return (
-		<div>
+		<>
 			<Line
 				options={{
 					responsive: false,
@@ -53,8 +53,8 @@ export function Sparkline({
 						}
 					}
 				}}
-				height={50}
-				width={100}
+				height={45}
+				width={125}
 				data={{
 					labels: data,
 					datasets: [
@@ -64,6 +64,6 @@ export function Sparkline({
 					]
 				}}
 			/>
-		</div>
+		</>
 	);
 }

@@ -6,4 +6,12 @@
 	html {
 		color-scheme: dark;
 	}
+
+	body::-webkit-scrollbar {
+		display: none;
+	}
+
+	::selection {
+		@apply bg-blue-300 text-white;
+	}
 }
