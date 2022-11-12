@@ -14,11 +14,11 @@ export function PriceTable({ data }: { data: any[] }) {
 
 	return (
 		<tbody>
-			{data.map((coin: any, k: number) => (
+			{data?.map((coin: any, k: number) => (
 				<tr
 					key={k}
 					onClick={() => handleNavigation(coin.id)}
-					className='h-14 px-4 bg-dark-accent hover:bg-dark-accent-1 group hover:cursor-pointer'>
+					className='h-14 px-4 w-full bg-dark-accent hover:bg-dark-accent-1 group hover:cursor-pointer'>
 					<td className='whitespace-nowrap px-4 py-2 group-hover:rounded-l-xl'>
 						<div className='relative h-8 w-8 rounded-full bg-white overflow-hidden'>
 							<Image src={coin.image} alt={coin.name} fill />

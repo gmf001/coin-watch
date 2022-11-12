@@ -1,4 +1,5 @@
 import { PriceTable } from '@/components/PriceTable';
+import { Suspense } from 'react';
 
 async function getData() {
 	const res = await fetch(
@@ -10,7 +11,6 @@ async function getData() {
 
 export default async function Home() {
 	const data = await getData();
-	// console.log(data[0]);
 
 	return (
 		<div className='overflow-x-auto'>
@@ -29,7 +29,9 @@ export default async function Home() {
 						</th>
 					</tr>
 				</thead>
-				<PriceTable data={data} />
+				<Suspense fallback={<div></div>}>
+					<PriceTable data={data} />
+				</Suspense>
 			</table>
 		</div>
 	);
