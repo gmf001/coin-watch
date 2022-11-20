@@ -3,15 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-	html {
-		color-scheme: dark;
-	}
+  html {
+    color-scheme: dark;
+    overflow-y: scroll;
+  }
 
-	body::-webkit-scrollbar {
-		display: none;
-	}
-
-	::selection {
-		@apply bg-blue-300 text-white;
-	}
+  ::selection {
+    @apply bg-blue-300 text-white;
+  }
 }

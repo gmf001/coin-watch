@@ -1,9 +1,7 @@
-const Head = () => {
-	return (
-		<head>
-			<title>Crypto Prices</title>
-		</head>
-	);
-};
-
-export default Head;
+export default function Head() {
+  return (
+    <>
+      <title>Crypto Prices | Cryptocurrency prices</title>
+    </>
+  );
+}

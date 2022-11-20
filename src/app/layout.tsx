@@ -1,17 +1,24 @@
-import { PropsWithChildren } from 'react';
-import { Header } from '@/components/Header';
-
+import { Inter } from '@next/font/google';
+import Header from '@/components/Header';
 import '@/styles/globals.css';
 
-export default function Root({ children }: PropsWithChildren) {
-	return (
-		<html lang='en'>
-			<body className='bg-dark min-h-screen text-white'>
-				<Header />
-				<main className='container max-w-5xl rounded-xl p-8 -mt-16 mb-20 bg-dark-accent'>
-					{children}
-				</main>
-			</body>
-		</html>
-	);
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
+});
+
+function AppLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang='en' className={inter.variable}>
+      <head />
+      <body className='min-h-screen bg-dark text-white'>
+        <Header />
+        <main className='container -mt-16 mb-20 max-w-5xl rounded-xl bg-dark-accent p-8'>
+          {children}
+        </main>
+      </body>
+    </html>
+  );
 }
+
+export default AppLayout;
