@@ -1,4 +1,4 @@
-# Crypto Prices
+# CoinWatch
 
 This is a project to play with the new Next 13 update
 

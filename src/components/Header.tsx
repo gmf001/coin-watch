@@ -7,7 +7,7 @@ function Header() {
         <div className='space-y-3 pt-20 pb-10 text-center'>
           <Link href='/'>
             <h1 className='text-3xl font-extrabold hover:underline'>
-              🤑 Crypto Prices 🤑
+              🤑 CoinWatch 🤑
             </h1>
           </Link>
           <div>

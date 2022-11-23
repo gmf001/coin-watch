@@ -1,7 +1,8 @@
 export default function Head() {
   return (
     <>
-      <title>Crypto Prices | Cryptocurrency prices</title>
+      <title>CoinWatch | Cryptocurrency prices</title>
+      <meta name='viewport' content='initial-scale=1.0, width=device-width' />
     </>
   );
 }
