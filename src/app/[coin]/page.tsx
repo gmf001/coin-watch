@@ -10,7 +10,9 @@ interface Props {
 }
 
 async function getCoinData(coin: string) {
-  const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`);
+  const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`, {
+    next: { revalidate: 60 }
+  });
   if (!res.ok) return null;
   const data = await res.json();
   return data as CoinData;
@@ -44,7 +46,7 @@ async function CoinPage({ params }: Props) {
         <div className='space-y-1'>
           <h2 className='text-3xl font-bold'>{coin.name}</h2>
           <div className='space-x-5 font-semibold'>
-            <span className='text-primary'>{currentPrice}</span>
+            <span className='text-cyan-200'>{currentPrice}</span>
             <span
               className={clsx(
                 coin.market_data.price_change_percentage_24h < 0
@@ -61,7 +63,7 @@ async function CoinPage({ params }: Props) {
         <Link
           href={coin.links.homepage[0]}
           target='_blank'
-          className='rounded-lg bg-dark-blue px-8 py-3 text-sm font-bold text-white hover:bg-dark-blue/80'
+          className='rounded-lg bg-primary-accent px-8 py-3 text-sm font-bold text-white hover:bg-primary-accent/80'
           rel='noreferrer'
         >
           Website
@@ -69,7 +71,7 @@ async function CoinPage({ params }: Props) {
         <Link
           href={`http://twitter.com/${coin.links.twitter_screen_name}`}
           target='_blank'
-          className='rounded-lg bg-dark-blue px-8 py-3 text-sm font-bold text-white hover:bg-dark-blue/80'
+          className='rounded-lg bg-primary-accent px-8 py-3 text-sm font-bold text-white hover:bg-primary-accent/80'
           rel='noreferrer'
         >
           Twitter

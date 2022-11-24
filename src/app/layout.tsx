@@ -14,7 +14,10 @@ interface Props {
 function AppLayout({ children }: Props) {
   return (
     <html lang='en' className={inter.variable}>
-      <head />
+      <head>
+        <title>CoinWatch | Cryptocurrency prices</title>
+        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+      </head>
       <body className='min-h-screen bg-dark font-sans text-white'>
         <Header />
         <main className='container -mt-16 mb-20 max-w-5xl rounded-xl bg-dark-accent p-8'>

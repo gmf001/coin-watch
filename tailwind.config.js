@@ -8,20 +8,19 @@ module.exports = {
   ],
   theme: {
     container: {
-      center: true
+      center: true,
+      padding: '1rem'
     },
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)']
       },
       colors: {
-        primary: '#73f3ff',
+        primary: '#17b9b1',
+        'primary-accent': '#07928b',
         dark: '#0f0f0f',
-        'dark-blue': '#1832a8',
         'dark-accent': '#141416',
-        'dark-accent-1': '#1c1d22',
-        'dark-accent-2': '#232329',
-        'dark-accent-3': '#353945'
+        'dark-accent-1': '#1c1d22'
       }
     }
   },
