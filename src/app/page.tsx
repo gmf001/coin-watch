@@ -1,5 +1,8 @@
 import CoinTable from '@/components/CoinTable';
 
+export const runtime = 'experimental-edge';
+export const revalidate = 60;
+
 async function getCoinData() {
   const res = await fetch(
     'https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&sparkline=true&per_page=100&page=1&price_change_percentage=24h%2C7d'
@@ -28,6 +31,7 @@ async function HomePage() {
             </th>
           </tr>
         </thead>
+
         <CoinTable coins={coins} />
       </table>
     </div>
