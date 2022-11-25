@@ -6,8 +6,8 @@ import { notFound } from 'next/navigation';
 async function getCoinData(coin: string) {
   const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`);
   if (!res.ok) return null;
-  const data = await res.json();
-  return data as CoinData;
+  const data: CoinData = await res.json();
+  return data;
 }
 
 interface Props {

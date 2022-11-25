@@ -4,12 +4,13 @@ async function getCoinData() {
   const res = await fetch(
     'https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&sparkline=true&per_page=100&page=1&price_change_percentage=24h%2C7d'
   );
-  if (!res.ok) throw new Error('Failed to fetch data');
-  return res.json();
+  if (!res.ok) return [];
+  const data: Coin[] = await res.json();
+  return data;
 }
 
 async function HomePage() {
-  const coins: Coin[] = await getCoinData();
+  const coins = await getCoinData();
 
   return (
     <div className='overflow-x-auto'>
