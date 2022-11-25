@@ -1,7 +1,6 @@
 import CoinTable from '@/components/CoinTable';
 
 export const runtime = 'experimental-edge';
-export const revalidate = 60;
 
 async function getCoinData() {
   const res = await fetch(
