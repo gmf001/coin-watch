@@ -3,8 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export const runtime = 'experimental-edge';
-
 async function getCoinData(coin: string) {
   const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`);
   if (!res.ok) return null;
