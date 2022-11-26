@@ -3,11 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-async function getCoinData(coin: string) {
+async function getCoinData(coin: string): Promise<CoinData | never> {
   const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`);
-  if (!res.ok) return null;
-  const data: CoinData = await res.json();
-  return data;
+  if (!res.ok) return notFound();
+  return res.json();
 }
 
 interface Props {
@@ -18,10 +17,6 @@ interface Props {
 
 async function CoinPage({ params }: Props) {
   const coin = await getCoinData(params.coin);
-
-  if (!coin) {
-    return notFound();
-  }
 
   const currentPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',

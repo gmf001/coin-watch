@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sparkline } from './Sparkline';
+import Sparkline from './coin-sparkline';
 
 interface Props {
   coin: Coin;

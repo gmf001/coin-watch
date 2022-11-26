@@ -1,12 +1,13 @@
-import CoinTable from '@/components/CoinTable';
+import CoinTable from '@/components/coin-table';
 
-async function getCoinData() {
+export const runtime = 'experimental-edge';
+
+async function getCoinData(): Promise<Coin[]> {
   const res = await fetch(
     'https://api.coingecko.com/api/v3/coins/markets?vs_currency=aud&order=market_cap_desc&sparkline=true&per_page=100&page=1&price_change_percentage=24h%2C7d'
   );
   if (!res.ok) return [];
-  const data: Coin[] = await res.json();
-  return data;
+  return res.json();
 }
 
 async function HomePage() {
@@ -29,7 +30,6 @@ async function HomePage() {
             </th>
           </tr>
         </thead>
-
         <CoinTable coins={coins} />
       </table>
     </div>

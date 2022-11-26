@@ -1,7 +1,7 @@
 'use client';
 
-import { Suspense } from 'react';
-import CoinRow from './CoinRow';
+import AutoAnimate from '../ui/auto-animate';
+import CoinRow from './coin-row';
 
 interface Props {
   coins: Coin[];
@@ -9,11 +9,11 @@ interface Props {
 
 function CoinTable({ coins }: Props) {
   return (
-    <tbody>
+    <AutoAnimate as='tbody'>
       {coins.map((coin) => (
         <CoinRow key={coin.id} coin={coin} />
       ))}
-    </tbody>
+    </AutoAnimate>
   );
 }
 

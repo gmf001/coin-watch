@@ -12,7 +12,7 @@ import { Line } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Title);
 
-export function Sparkline({
+function Sparkline({
   data,
   percentChange
 }: {
@@ -67,3 +67,5 @@ export function Sparkline({
     </>
   );
 }
+
+export default Sparkline;

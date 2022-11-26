@@ -1,5 +1,5 @@
 import { Inter } from '@next/font/google';
-import Header from '@/components/Header';
+import Header from '@/components/ui/header';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -14,10 +14,7 @@ interface Props {
 function AppLayout({ children }: Props) {
   return (
     <html lang='en' className={inter.variable}>
-      <head>
-        <title>CoinWatch | Cryptocurrency prices</title>
-        <meta name='viewport' content='initial-scale=1.0, width=device-width' />
-      </head>
+      <head />
       <body className='min-h-screen bg-dark font-sans text-white'>
         <Header />
         <main className='container -mt-16 mb-20 max-w-5xl rounded-xl bg-dark-accent p-8'>

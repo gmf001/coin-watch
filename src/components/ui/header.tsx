@@ -6,7 +6,7 @@ function Header() {
       <div className='container max-w-2xl'>
         <div className='space-y-3 pt-20 pb-10 text-center'>
           <Link href='/'>
-            <h1 className='text-4xl font-extrabold hover:underline'>
+            <h1 className='text-4xl font-extrabold hover:opacity-90'>
               CoinWatch
             </h1>
           </Link>
