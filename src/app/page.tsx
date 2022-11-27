@@ -1,4 +1,5 @@
 import CoinTable from '@/components/coin-table';
+import { Suspense } from 'react';
 
 async function getCoinData(): Promise<Coin[]> {
   const res = await fetch(
@@ -28,7 +29,9 @@ async function HomePage() {
             </th>
           </tr>
         </thead>
-        <CoinTable coins={coins} />
+        <Suspense fallback={<></>}>
+          <CoinTable coins={coins} />
+        </Suspense>
       </table>
     </div>
   );

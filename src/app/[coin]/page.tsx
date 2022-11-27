@@ -15,7 +15,12 @@ interface Props {
   };
 }
 
+export const preload = (coin: string) => {
+  void getCoinData(coin);
+};
+
 async function CoinPage({ params }: Props) {
+  preload(params.coin);
   const coin = await getCoinData(params.coin);
 
   const currentPrice = new Intl.NumberFormat('en-US', {

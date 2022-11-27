@@ -1,6 +1,3 @@
-'use client';
-
-import AutoAnimate from '../ui/auto-animate';
 import CoinRow from './coin-row';
 
 interface Props {
@@ -9,11 +6,11 @@ interface Props {
 
 function CoinTable({ coins }: Props) {
   return (
-    <AutoAnimate as='tbody'>
-      {coins.map((coin) => (
+    <tbody>
+      {coins?.map((coin) => (
         <CoinRow key={coin.id} coin={coin} />
       ))}
-    </AutoAnimate>
+    </tbody>
   );
 }
 
