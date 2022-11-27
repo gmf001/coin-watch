@@ -10,17 +10,10 @@ async function getCoinData(coin: string): Promise<CoinData | never> {
 }
 
 interface Props {
-  params: {
-    coin: string;
-  };
+  params: { coin: string };
 }
 
-export const preload = (coin: string) => {
-  void getCoinData(coin);
-};
-
 async function CoinPage({ params }: Props) {
-  preload(params.coin);
   const coin = await getCoinData(params.coin);
 
   const currentPrice = new Intl.NumberFormat('en-US', {
@@ -61,7 +54,7 @@ async function CoinPage({ params }: Props) {
         <Link
           href={coin.links.homepage[0]}
           target='_blank'
-          className='rounded-lg bg-primary-accent px-8 py-3 text-sm font-bold text-white hover:bg-primary-accent/80'
+          className='rounded bg-primary-accent px-8 py-3 text-sm font-bold text-white hover:bg-primary-accent/80'
           rel='noreferrer'
         >
           Website
@@ -69,7 +62,7 @@ async function CoinPage({ params }: Props) {
         <Link
           href={`http://twitter.com/${coin.links.twitter_screen_name}`}
           target='_blank'
-          className='rounded-lg bg-primary-accent px-8 py-3 text-sm font-bold text-white hover:bg-primary-accent/80'
+          className='rounded bg-primary-accent px-8 py-3 text-sm font-bold text-white hover:bg-primary-accent/80'
           rel='noreferrer'
         >
           Twitter

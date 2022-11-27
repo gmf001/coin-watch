@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 function Header() {
   return (
-    <header className='min-h-[300px] w-full bg-primary-accent p-8'>
+    <header className='min-h-[250px] w-full bg-primary-accent p-8 sm:min-h-[350px]'>
       <div className='container max-w-2xl'>
-        <div className='space-y-3 pt-20 pb-10 text-center'>
+        <div className='space-y-3 pt-10 pb-10 text-center sm:pt-20'>
           <Link href='/'>
             <h1 className='text-4xl font-extrabold hover:opacity-90'>
               CoinWatch

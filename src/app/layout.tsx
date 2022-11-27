@@ -17,7 +17,7 @@ function AppLayout({ children }: Props) {
       <head />
       <body className='min-h-screen bg-dark font-sans text-white'>
         <Header />
-        <main className='container -mt-16 mb-20 max-w-5xl rounded-xl bg-dark-accent p-8'>
+        <main className='container -mt-16 mb-20 max-w-5xl bg-dark-accent p-8 sm:-mt-28 lg:rounded-xl'>
           {children}
         </main>
       </body>

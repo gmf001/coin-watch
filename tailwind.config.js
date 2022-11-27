@@ -13,11 +13,11 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)']
+        sans: ['var(--font-inter)', 'arial']
       },
       colors: {
-        primary: '#17b9b1',
-        'primary-accent': '#07928b',
+        primary: '#6060ff',
+        'primary-accent': '#5151e7',
         dark: '#0f0f0f',
         'dark-accent': '#141416',
         'dark-accent-1': '#1c1d22'
