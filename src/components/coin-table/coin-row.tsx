@@ -24,7 +24,14 @@ function CoinRow({ coin }: Props) {
       <tr className='group h-14 w-full bg-dark-accent px-4 hover:cursor-pointer hover:bg-dark-accent-1'>
         <td className='whitespace-nowrap px-4 py-2 group-hover:rounded-l-xl'>
           <div className='relative h-8 w-8 overflow-hidden rounded-full bg-white'>
-            <Image src={coin.image} alt={coin.name} fill />
+            <Image
+              src={coin.image}
+              alt={coin.name}
+              fill
+              sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
+            />
           </div>
         </td>
 
