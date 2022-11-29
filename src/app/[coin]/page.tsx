@@ -4,9 +4,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import LayoutWrapper from '@/components/ui/layout-wrapper';
 
-export const dynamic = 'force-static';
-export const runtime = 'experimental-edge';
-
 async function getCoinData(coin: string) {
   const res = await fetch(`https://api.coingecko.com/api/v3/coins/${coin}`);
   if (!res.ok) return notFound();
