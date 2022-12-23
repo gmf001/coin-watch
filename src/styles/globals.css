@@ -4,11 +4,11 @@
 
 @layer base {
   html {
+    font-family: var(--font-inter);
     color-scheme: dark;
-    overflow-y: scroll;
   }
 
   ::selection {
-    @apply bg-blue-300 text-white;
+    @apply bg-primary text-white;
   }
 }

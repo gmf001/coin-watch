@@ -1,26 +1,19 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-  content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}'
-  ],
+  content: ['./src/app/**/*.{js,ts,jsx,tsx}'],
   theme: {
     container: {
       center: true,
       padding: '1rem'
     },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-inter)', 'arial']
-      },
       colors: {
-        primary: '#6060ff',
-        'primary-accent': '#5151e7',
-        dark: '#0f0f0f',
-        'dark-accent': '#141416',
-        'dark-accent-1': '#1c1d22'
+        gray: colors.zinc,
+        primary: colors.purple['600'],
+        accent: colors.purple['500'],
+        black: '#0f0f0f'
       }
     }
   },

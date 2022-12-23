@@ -1,13 +1,14 @@
-import clsx from 'clsx';
+import cn from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import Sparkline from './coin-sparkline';
+import Sparkline from './sparkline';
+import { Coin } from '@/types';
 
 interface Props {
   coin: Coin;
 }
 
-function CoinRow({ coin }: Props) {
+function Row({ coin }: Props) {
   const currentPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'AUD'
@@ -21,17 +22,10 @@ function CoinRow({ coin }: Props) {
 
   return (
     <Link href={`/${coin.id}`} legacyBehavior>
-      <tr className='group h-14 w-full bg-dark-accent px-4 hover:cursor-pointer hover:bg-dark-accent-1'>
+      <tr className='group h-14 w-full bg-gray-900 px-4 hover:cursor-pointer hover:bg-gray-800'>
         <td className='whitespace-nowrap px-4 py-2 group-hover:rounded-l-xl'>
           <div className='relative h-8 w-8 overflow-hidden rounded-full bg-white'>
-            <Image
-              src={coin.image}
-              alt={coin.name}
-              fill
-              sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw'
-            />
+            <Image src={coin.image} alt={coin.name} height={32} width={32} />
           </div>
         </td>
 
@@ -45,7 +39,7 @@ function CoinRow({ coin }: Props) {
 
         <td className='whitespace-nowrap px-4 py-2'>
           <div
-            className={clsx(
+            className={cn(
               'text-sm font-semibold',
               coin.price_change_percentage_24h < 0 && 'text-red-300',
               coin.price_change_percentage_24h >= 0 && 'text-green-300'
@@ -70,4 +64,4 @@ function CoinRow({ coin }: Props) {
   );
 }
 
-export default CoinRow;
+export default Row;
