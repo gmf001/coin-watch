@@ -6,7 +6,7 @@ export const searchParams = new URLSearchParams({
   sparkline: 'true',
   per_page: '50',
   page: '1',
-  price_change_percentage: '24h%2C7d'
+  price_change_percentage: '1h,24h,7d'
 });
 
 export const HOME_ENDPOINT = API_URL.concat('/markets?' + searchParams);

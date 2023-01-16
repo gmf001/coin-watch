@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation';
-import { type CoinSingle } from '@/types';
 import { API_URL } from '@/const';
-import CoinCards from './components/cards';
-import CoinInfo from './components/info';
+import { CoinCards, CoinInfo } from '@/components/coin-single';
+import { type CoinSingle } from '@/types';
 
 async function getData(coin: string): Promise<CoinSingle> {
   const res = await fetch(API_URL.concat(`/${coin}`));

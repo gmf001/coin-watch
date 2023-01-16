@@ -2,19 +2,15 @@ import cn from 'clsx';
 import valueFormatter from '@/utils/formatter';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CoinSingle } from '@/types';
+import type { CoinSingle } from '@/types';
 
-interface Props {
-  coin: CoinSingle;
-}
-
-function CoinInfo({ coin }: Props) {
+export function CoinInfo({ coin }: { coin: CoinSingle }) {
   const currentPrice = valueFormatter(coin.market_data.current_price.aud);
 
   return (
     <div className='flex flex-col space-y-8'>
       <div className='flex items-center space-x-4'>
-        <div className='relative h-20 w-20 overflow-hidden rounded-full'>
+        <div className='relative w-20 h-20 overflow-hidden rounded-full'>
           <Image
             src={coin.image.large}
             alt={coin.name}
@@ -43,7 +39,7 @@ function CoinInfo({ coin }: Props) {
         <Link
           href={coin.links.homepage[0]}
           target='_blank'
-          className='rounded bg-primary px-8 py-3 text-sm font-bold text-white hover:bg-accent/80'
+          className='px-8 py-3 text-sm font-bold text-white rounded bg-primary hover:bg-accent/80'
           rel='noreferrer'
         >
           Website
@@ -51,18 +47,16 @@ function CoinInfo({ coin }: Props) {
         <Link
           href={`http://twitter.com/${coin.links.twitter_screen_name}`}
           target='_blank'
-          className='rounded bg-primary px-8 py-3 text-sm font-bold text-white hover:bg-accent/80'
+          className='px-8 py-3 text-sm font-bold text-white rounded bg-primary hover:bg-accent/80'
           rel='noreferrer'
         >
           Twitter
         </Link>
       </div>
-      <div className='space-y-2 py-5'>
+      <div className='py-5 space-y-2'>
         <h2 className='text-lg font-bold'>About {coin.name}</h2>
         <p className='line-clamp-5'>{coin.description.en}</p>
       </div>
     </div>
   );
 }
-
-export default CoinInfo;

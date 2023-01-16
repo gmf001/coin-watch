@@ -2,13 +2,9 @@ import cn from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import Sparkline from './sparkline';
-import { Coin } from '@/types';
+import type { Coin } from '@/types';
 
-interface Props {
-  coin: Coin;
-}
-
-function Row({ coin }: Props) {
+function Row({ coin }: { coin: Coin }) {
   const currentPrice = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'AUD'
@@ -22,22 +18,22 @@ function Row({ coin }: Props) {
 
   return (
     <Link href={`/${coin.id}`} legacyBehavior>
-      <tr className='group h-14 w-full bg-gray-900 px-4 hover:cursor-pointer hover:bg-gray-800'>
-        <td className='whitespace-nowrap px-4 py-2 group-hover:rounded-l-xl'>
-          <div className='relative h-8 w-8 overflow-hidden rounded-full bg-white'>
+      <tr className='w-full px-4 bg-gray-900 group h-14 hover:cursor-pointer hover:bg-gray-800'>
+        <td className='px-4 py-2 whitespace-nowrap group-hover:rounded-l-xl'>
+          <div className='relative w-8 h-8 overflow-hidden bg-white rounded-full'>
             <Image src={coin.image} alt={coin.name} height={32} width={32} />
           </div>
         </td>
 
-        <td className='whitespace-nowrap px-4 py-2'>
+        <td className='px-4 py-2 whitespace-nowrap'>
           <p className='text-base font-bold'>{coin.name}</p>
         </td>
 
-        <td className='whitespace-nowrap px-4 py-2'>
+        <td className='px-4 py-2 whitespace-nowrap'>
           <p className='text-sm font-semibold'>{currentPrice}</p>
         </td>
 
-        <td className='whitespace-nowrap px-4 py-2'>
+        <td className='px-4 py-2 whitespace-nowrap'>
           <div
             className={cn(
               'text-sm font-semibold',
@@ -49,7 +45,7 @@ function Row({ coin }: Props) {
           </div>
         </td>
 
-        <td className='whitespace-nowrap px-4 py-2'>
+        <td className='px-4 py-2 whitespace-nowrap'>
           <p className='text-sm font-semibold'>{currentMarketcap}</p>
         </td>
 

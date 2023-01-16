@@ -1,5 +1,5 @@
 import { Inter } from '@next/font/google';
-import PageLayout from './components/ui/layout';
+import PageLayout from '@/components/ui/layout';
 import '@/styles/globals.css';
 
 const inter = Inter({
@@ -14,10 +14,8 @@ interface Props {
 function AppLayout({ children }: Props) {
   return (
     <html lang='en' className={inter.variable}>
-      <head>
-        <title>CoinWatch | Crypto prices</title>
-      </head>
-      <body className='min-h-screen bg-black font-sans text-white'>
+      <head />
+      <body className='min-h-screen'>
         <PageLayout>{children}</PageLayout>
       </body>
     </html>

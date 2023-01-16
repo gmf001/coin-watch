@@ -1,4 +1,4 @@
-import CoinTable from './components/coin-table';
+import CoinTable from '@/components/coin-table';
 import { HOME_ENDPOINT } from '@/const';
 import { type Coin } from '@/types';
 

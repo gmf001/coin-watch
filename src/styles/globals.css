@@ -4,11 +4,11 @@
 
 @layer base {
   html {
-    font-family: var(--font-inter);
+    @apply font-sans text-white bg-black;
     color-scheme: dark;
   }
 
   ::selection {
-    @apply bg-primary text-white;
+    @apply text-white bg-primary;
   }
 }
